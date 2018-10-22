@@ -30,3 +30,27 @@
     transform: rotate(360deg);
   }
 }
+
+.users_list {
+  text-align: left;
+  height: 50px;
+  width: 20%;
+  background-color: powderblue;
+}
+
+.Chat_Box {
+  border-style: solid;
+  border-color: blue;
+}
+
+.container {
+  background: #eaeaea;
+  padding: 30px;
+  margin: 30px;
+}
+
+#chat_box {
+  background: #e0c4dd;
+  border-radius: 5px;
+  padding: 10px;
+}
