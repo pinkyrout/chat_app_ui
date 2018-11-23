@@ -1,5 +1,4 @@
 import React from 'react';
-import Chat_Box from '../App.css';
 import { get } from '../apis/apiHelper.js';
 import { post } from '../apis/apiHelper.js';
 
@@ -10,17 +9,20 @@ class ChatBox extends React.Component {
   }
 
   componentDidMount(){
-    this.timer = setInterval(()=> this.fetch_messages(), 5000);
-    //this.fetch_messages()
+    console.log("chatbox componentDidMount")
+    //this.timer = setInterval(()=> this.fetch_messages(), 5000);
+    this.fetch_messages()
   }
 
   componentDidUpdate(prevProps, prevState){
+    console.log("componentDidUpdate")
     if(prevProps.to_user !== this.props.to_user || prevState.send !== this.state.send)
     {
+      console.log("in fetch")
       this.fetch_messages()
       //this.timer = setInterval(()=> this.fetch_messages(), 1000);
     }
-    console.log(prevProps.to_user)
+    //console.log(prevProps.to_user)
   }
 
   fetch_messages(){
@@ -29,6 +31,7 @@ class ChatBox extends React.Component {
        get("api/users/"+this.props.current_user_id+"/load_messages?from_user_id="+this.props.to_user.id, "", { })
          .then(jsonResponse => {
          console.log(jsonResponse)
+         //console.log("check check check!!!!!!!!")
          this.setState({ messages: jsonResponse});
        })
     }
@@ -51,7 +54,7 @@ class ChatBox extends React.Component {
         }
 
       })
-  }
+  };
 
   render(){
     if(this.props.to_user == null)
@@ -87,10 +90,7 @@ class ChatBox extends React.Component {
            <div className = 'form-inline'>
               <input id = 'user_input' className = 'form-control col-md-9'/>
               <button 
-              onClick = { event => {
-                this.handleOnSend()
-              }
-              }
+              onClick = {this.handleOnSend}
               className = 'btn btn-success'
               >Send</button>
             </div>

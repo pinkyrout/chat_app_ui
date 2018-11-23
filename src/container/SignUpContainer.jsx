@@ -8,16 +8,28 @@ class SignUpContainer extends React.Component
     isSubmitted: false,
     current_user: null
   }
-  
-  handleOnSubmit = () =>{
+
+  handleOnSubmit = (event) => {
     const payload = {name: document.getElementById("user_name").value}
     post("api/users", payload, { })
       .then(jsonResponse => {
         console.log(jsonResponse.id)
         this.setState({isSubmitted: true, current_user: jsonResponse});
+        console.log(event)
         //this.setState({current_user_id: jsonResponse.id});
-      })
+      });
   }
+
+  // handleOnSubmit(){
+  //   const payload = {name: document.getElementById("user_name").value}
+  //   post("api/users", payload, { })
+  //     .then(jsonResponse => {
+  //       console.log(jsonResponse.id)
+  //       this.setState({isSubmitted: true, current_user: jsonResponse});
+  //       //console.log(event)
+  //       //this.setState({current_user_id: jsonResponse.id});
+  //     });
+  // }
   
   render(){
     
@@ -29,10 +41,7 @@ class SignUpContainer extends React.Component
           <input id = 'user_name'/>
           <button
             className = 'btn btn-success'
-            onClick = { event => {
-              this.handleOnSubmit()
-            }
-            }
+            onClick = {this.handleOnSubmit}
           >SignUp</button>
         </div>
       );

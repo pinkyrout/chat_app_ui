@@ -1,5 +1,5 @@
-const apiHostUrl = "https://secret-spire-30789.herokuapp.com";
-//const apiHostUrl = "http://localhost:3001";
+//const apiHostUrl = "https://secret-spire-30789.herokuapp.com";
+const apiHostUrl = "http://localhost:3001";
 
 const defaultHeaders = () => {
   return {

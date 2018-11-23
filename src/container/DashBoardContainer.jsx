@@ -1,6 +1,5 @@
 import React from 'react';
-import UsersList from '../components/UsersList.jsx'
-import { get } from '../apis/apiHelper.js';
+import UsersList from '../components/UsersList.jsx';
 import ChatBox from '../components/ChatBox.jsx';
 
 class DashBoardContainer extends React.Component
@@ -42,7 +41,7 @@ class DashBoardContainer extends React.Component
           </div>
         </div>
       </div>
-      );
+    );
   }
 }
 
