@@ -1,6 +1,8 @@
 const Types = {
   SELECT_USER: "SELECT_USER",
-  FETCH_USERS: "FETCH_USERS"
+  FETCH_USERS: "FETCH_USERS",
+  SUBMIT_FORM: "SUBMIT_FORM",
+  CREATE_USER: "CREATE_USER"
 };
 
 export default Types;

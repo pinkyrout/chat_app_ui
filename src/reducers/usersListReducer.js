@@ -5,6 +5,7 @@ const initialState = {
 }
 
 const usersListReducer = (state = initialState, action) => {
+  //debugger
   switch(action.type){
     case Types.FETCH_USERS:
       return {

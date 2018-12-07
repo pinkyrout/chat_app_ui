@@ -20,6 +20,7 @@ class UsersList extends React.Component
   // }
 
   componentWillMount() {
+    //debugger
     console.log("in componentDidMount")
     this.props.fetchUsers();
   }
@@ -30,7 +31,7 @@ class UsersList extends React.Component
         this.props.users.map((user) => {
           if( this.props.to_user && user.id === this.props.to_user.id)
           {
-           return (
+            return (
               <li key={user.id} className = 'list-group-item active'
                 onClick = { event => {
                   this.props.handleOnClick(event, user)
